@@ -1,16 +1,17 @@
 import React from "react";
+import { StyledPersonCard } from "./PersonCard.styled";
 
 const PersonCard = ({ name, country, birthday, image, deathday }) => {
   return (
-    <div>
+    <StyledPersonCard>
       <div>
-        <img src={image} alt="" />
+        <img className="img-wrapper" src={image} alt="ActorImage" />
       </div>
       <h2>Name :{name}</h2>
       <h3>Country :{country}</h3>
       <p>Date of birth :{birthday}</p>
-      <p>{deathday}</p>
-    </div>
+      <p className="deathday">{deathday}</p>
+    </StyledPersonCard>
   );
 };
 
