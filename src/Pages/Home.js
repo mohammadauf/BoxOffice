@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import MainPageLayout from "../Component/MainPageLayout";
 import { apiGet } from "../misc/config";
-
+import ShowGrid from "../Component/Show/ShowGrid";
+import PersonGrid from "../Component/Person/PersonGrid";
+// import { NavLink } from "react-router-dom";
 const Home = () => {
   const [input, setInput] = useState("");
   const [results, setResult] = useState(null);
@@ -10,7 +12,7 @@ const Home = () => {
   const onSearch = () => {
     apiGet(`/search/${searchOption}?q=${input}`).then((data) => {
       setResult(data);
-      console.log(data);
+      // console.log(data);
     });
   };
 
@@ -21,7 +23,7 @@ const Home = () => {
   const onRadioChange = (ev) => {
     setSearchOption(ev.target.value);
   };
-  // console.log(searchOption);
+
   const onKeySearch = (ev) => {
     if (ev.keyCode === 13) {
       onSearch();
@@ -32,15 +34,9 @@ const Home = () => {
       return <div>No Result Found</div>;
     }
     if (results && results.length > 0) {
-      return results[0].show
-        ? results.map((curElem) => (
-            <div key={curElem.show.id}>{curElem.show.name}</div>
-          ))
-        : results.map((curElem) => (
-            <div key={curElem.person.id}>{curElem.person.name}</div>
-          ));
+      return results[0].show ? <ShowGrid data={results} /> : <PersonGrid  data={results}/>;
     }
-    // return null;
+    return null;
   };
 
   return (
@@ -55,7 +51,7 @@ const Home = () => {
       />
       <div>
         <label htmlFor="show-search">
-          show
+          Show
           <input
             id="show-search"
             type="radio"
@@ -65,7 +61,7 @@ const Home = () => {
           />
         </label>
         <label htmlFor="show-people">
-          People
+          Actor
           <input
             type="radio"
             id="show-people"
@@ -75,6 +71,7 @@ const Home = () => {
           />
         </label>
       </div>
+
       <button type="button" onClick={onSearch}>
         Search
       </button>
