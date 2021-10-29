@@ -34,7 +34,11 @@ const Home = () => {
       return <div>No Result Found</div>;
     }
     if (results && results.length > 0) {
-      return results[0].show ? <ShowGrid data={results} /> : <PersonGrid  data={results}/>;
+      return results[0].show ? (
+        <ShowGrid data={results} />
+      ) : (
+        <PersonGrid data={results} />
+      );
     }
     return null;
   };

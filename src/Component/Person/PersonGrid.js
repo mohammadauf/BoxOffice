@@ -13,7 +13,9 @@ const PersonGrid = ({ data }) => {
           country={person.country ? person.country.name : "Unknown"}
           birthday={person.birthday ? person.birthday : "Not defiend"}
           image={person.image ? person.image.medium : Not_found_Img}
-          deathday={person.deathday ? `died ${person.deathday}` : "Alive"}
+          deathday={person.deathday ? `died ${person.deathday}` : "Alive" 
+        }
+
         />
       ))}
     </FlexGrid>

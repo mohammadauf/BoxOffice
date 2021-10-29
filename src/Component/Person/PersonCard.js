@@ -3,7 +3,7 @@ import { StyledPersonCard } from "./PersonCard.styled";
 
 const PersonCard = ({ name, country, birthday, image, deathday }) => {
   return (
-    <StyledPersonCard>
+      <StyledPersonCard>
       <div>
         <img className="img-wrapper" src={image} alt="ActorImage" />
       </div>
