@@ -1,20 +1,21 @@
 import React from "react";
 import { Star } from "../styled";
+import { Headline, MainDataWrapper } from "./ShowMainData.styled";
 
 const ShowMainData = ({ image, name, rate, summary, tags, language }) => {
   return (
     <>
-      <div>
+      <MainDataWrapper>
         <img src={image} alt="show-cover" />
-        <div>
-          <div>
+        <div className="text-side">
+          <Headline>
             <h1>{name}</h1>
             <div>
               <Star />
               <span>{rate}</span>
             </div>
-          </div>
-          <div dangerouslySetInnerHTML={{ __html: summary }} />
+          </Headline>
+          <div className="summary" dangerouslySetInnerHTML={{ __html: summary }} />
 
           <div>
             <div>
@@ -25,7 +26,7 @@ const ShowMainData = ({ image, name, rate, summary, tags, language }) => {
           </div>
           
         </div>
-      </div>
+      </MainDataWrapper>
     </>
   );
 };

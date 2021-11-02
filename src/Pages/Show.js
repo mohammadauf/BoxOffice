@@ -6,6 +6,7 @@ import Season from "../Component/Show/Season";
 import ShowMainData from "../Component/Show/ShowMainData";
 import { apiGet } from "../misc/config";
 import Not_found_Img from "../misc/Image/404.jpg";
+import {ShowPageWrapper} from "./Show.styled"
 
 const reducer = (prevState, action) => {
   switch (action.type) {
@@ -66,6 +67,7 @@ const Show = () => {
   }
   return (
     <>
+    <ShowPageWrapper>
       <ShowMainData
         name={show.name}
         image={show.image ? show.image.medium : Not_found_Img}
@@ -94,6 +96,7 @@ const Show = () => {
           <Cast caste={show._embedded.cast} />
         </div>
       </div>
+      </ShowPageWrapper>
     </>
   );
 };
