@@ -14,7 +14,7 @@ const ShowCard = ({ id, name, language, image, summary ,show}) => {
       <div></div>
       <p>{summaryAsText}</p>
       <div>
-        <Link to={`/show${id}`}>readMore</Link>
+        <Link to={`show${id}`}>readMore</Link>
         <button type="button">Starred</button>
         {/* <p>${show}</p> */}
       </div>
