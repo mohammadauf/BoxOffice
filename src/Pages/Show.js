@@ -5,7 +5,7 @@ import Details from "../Component/Show/Details";
 import Season from "../Component/Show/Season";
 import ShowMainData from "../Component/Show/ShowMainData";
 import { apiGet } from "../misc/config";
-import Not_found_Img from "../misc/Image/404.jpg";
+import Not_found_Img from "../Image/404.jpg";
 import {ShowPageWrapper} from "./Show.styled"
 
 const reducer = (prevState, action) => {

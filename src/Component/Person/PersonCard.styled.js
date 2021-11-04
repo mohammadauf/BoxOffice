@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import { SearchCard } from '../styled';
 
 export const StyledPersonCard = styled(SearchCard)`

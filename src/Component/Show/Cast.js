@@ -1,5 +1,5 @@
 import React from "react";
-import Not_found_Img from "../../misc/Image/404.jpg";
+import Not_found_Img from "../../Image/404.jpg";
 import { CastList } from "./Cast.styled";
 
 const Cast = ({ caste }) => {

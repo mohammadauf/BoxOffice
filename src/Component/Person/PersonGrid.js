@@ -1,6 +1,6 @@
 import React from "react";
 import PersonCard from "../Person/PersonCard";
-import Not_found_Img from "../../misc/Image/404.jpg";
+import Not_found_Img from "../../Image/404.jpg";
 import { FlexGrid } from "../styled";
 
 const PersonGrid = ({ data }) => {

@@ -11,20 +11,23 @@ const ShowMainData = ({ image, name, rate, summary, tags, language }) => {
           <Headline>
             <h1>{name}</h1>
             <div>
-              <Star />
+              <Star active/>
               <span>{rate}</span>
             </div>
           </Headline>
-          <div className="summary" dangerouslySetInnerHTML={{ __html: summary }} />
+          <div
+            className="summary"
+            dangerouslySetInnerHTML={{ __html: summary }}
+          />
 
           <div>
             <div>
+              Tags:-{" "}
               {tags.map((tag, i) => (
-                <span key={i}>Tags:{`${tag}`}</span>
+                <span key={i}>{`${tag}${"  "}`}</span>
               ))}
             </div>
           </div>
-          
         </div>
       </MainDataWrapper>
     </>
