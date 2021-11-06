@@ -8,8 +8,9 @@ const ShowCard = ({
   language,
   image,
   summary,
-  onStarredClick,
-  inStarted,
+  onStarClick,
+  isStarred
+ 
 }) => {
   const summaryAsText = summary
     ? `${summary.split(" ").slice(0, 15).join(" ").replace(/<.+?>/g, "")}...`
@@ -29,9 +30,9 @@ const ShowCard = ({
           type="button"
           className="btns"
           id="btn"
-          onClick={onStarredClick}
+          onClick={onStarClick}
         >
-          <Star active={inStarted} />
+          <Star active={isStarred} />
         </button>
       </div>
     </StyledShowCard>
